@@ -1,6 +1,6 @@
 const cardTemplate = function (country) {
   return `<div class="card">
-              <img id="flag-image" src=${country.flags.svg} alt="flag" />
+              <img id="flag-image" src=${country.flags.png} alt="flag" />
               <h1 class="center">${country.name.common}</h1>
             </div>`;
 };
@@ -19,21 +19,21 @@ fetch("https://restcountries.com/v3.1/all")
   /* Podemos refactorizar este primer then con una funcion flecha:*/
   .then(response => response.json())
 
-  /*   .then(function (countries) {
+  /*  .then(function (countries) {
       // Here is where you'll need to add into the DOM all the countries received from API 
       // 1 - We will need to iterate the countries variable with a loop
       // 2 - You can use the cardTemplate() function to create a div with a class card already styled
       // 💡 you can use countriesNode variable to add elements
-  
+      
       for (let i = 0; i < countries.length; i++) {
         countriesNode.innerHTML += cardTemplate(countries[i]);
       }
-    }); */
+    });*/
 
-  /* Este segundo then también podemos refactorizarlo con una función flecha y un foreach aunque el for each tampoco es que ahorre código en este caso */
-  .then(countries =>
-    countries.forEach(country =>
-      countriesNode.innerHTML += cardTemplate(country)));
+  /* Este segundo then también podemos refactorizarlo con una función flecha y un foreach aunque el for each */
+   .then(countries => countries
+                          .sort((a, b) => (a.name.common).localeCompare(b.name.common))
+                          .forEach(country => countriesNode.innerHTML += cardTemplate(country))); 
 
 /* En el ejemplo salen los países ordenados alfabeticamente, tengo que mirar cómo hacerlo */
 
