@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <h1 id="title" class="center">Countries of the World 🌎</h1>
-    <div id="countries"></div>
-    <script src="./index.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <h1 id="title" class="center">Countries of the World 🌎</h1>
+
+  <div class="center">
+    <label for="continente" class="center">Selecciona si quieres ver alguna región especifica o volver a todos</label>
+    <select name="continente" id="continente">
+      <option value="Africa">Africa</option>
+      <option value="Americas">America</option>
+      <option value="Asia">Asia</option>
+      <option value="Europe">Europa</option>
+      <option value="Oceania">Oceania</option>
+      <option value="All">Todos</option>
+    </select>
+    <input type="submit" value="Enviar">
+  </div>
+
+  <div id="countries"></div>
+  <script src="./index.js"></script>
+</body>
+
 </html>
